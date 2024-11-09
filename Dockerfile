@@ -20,7 +20,7 @@ RUN npm run build
 FROM nginx:latest
 
 # Copy build output from the builder stage
-COPY --from=builder /usr/local/app/dist /usr/share/nginx/html
+COPY /dist/contact-ui /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
