@@ -8,6 +8,7 @@ WORKDIR /usr/local/app
 
 # Add the source code to app
 COPY package.json package-lock.json ./
+
 RUN npm install
 # Install all the dependencies
 
