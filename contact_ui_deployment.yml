@@ -16,7 +16,7 @@ spec:
   spec:
     containers:
     - name: contactuicontainer
-      image: zaifar/agularapi
+      image: zaifar/angularapi
       ports:
       - containerPort: 80
 ---
