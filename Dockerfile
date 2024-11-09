@@ -13,6 +13,8 @@ COPY ./ /usr/local/app/
 RUN rm -rf node_modules && npm cache clean --force
 RUN mkdir -p /usr/local/app/node_modules
 RUN npm install --unsafe-perm
+RUN npm install --loglevel verbose
+
 
 # Generate the build of the application
 RUN npm run build
