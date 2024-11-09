@@ -1,19 +1,15 @@
 # Stage 1: Compile and Build angular codebase
 
 # Use official node image as the base image
-FROM node:16-alpine
+FROM node:16-alpine AS build-stage
 
 # Set the working directory
 WORKDIR /usr/local/app
 
 # Add the source code to app
-COPY ./ /usr/local/app/
-
+COPY package.json package-lock.json ./
+RUN npm install
 # Install all the dependencies
-RUN rm -rf node_modules && npm cache clean --force
-RUN mkdir -p /usr/local/app/node_modules
-RUN npm install --unsafe-perm
-RUN npm install --loglevel verbose
 
 
 # Generate the build of the application
